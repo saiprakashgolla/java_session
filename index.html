@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-Session-01</title>
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <label for="First Name">First Name:</label>
+            </td>
+            <td>
+                <input id="First Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Last Name">Last Name:</label>
+            </td>
+            <td>
+                <input id="Last Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Email">Email:</label>
+            </td>
+            <td>
+                <input id="Email" />
+            </td>
+        </tr>
+    </table>
+
+    <button type="button" onClick="updateForm();"> Add To Table</button>
+
+    <br>
+
+    <table id="results" border="1" width="360">
+        <thead>
+            <tr>
+                <th width="120">First Name</th>
+                <th width="120">Last Name</th>
+                <th width="120">Email</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script type="text/javascript">
+
+
+        function updateForm() {
+            var firstName = document.getElementById("First Name").value;
+
+            var lastName = document.getElementById("Last Name").value;
+
+
+            var email = document.getElementById("Email").value;
+
+            document.getElementById('First Name').value = "";
+            document.getElementById('Last Name').value = "";
+            document.getElementById('Email').value = "";
+            var table = document.getElementById("results");
+            var row = table.insertRow(-1);
+            console.log(row);
+            var cell1 = row.insertCell(0);
+            console.log(cell1)
+            var cell2 = row.insertCell(1);
+            console.log(cell2)
+            var cell3 = row.insertCell(2);
+            console.log(cell3)
+            cell1.innerHTML = firstName;
+            cell2.innerHTML = lastName;
+            cell3.innerHTML = email;
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- <input type="text" placeholder="number" id="thenumber"/><br/><br/>
+        <button onclick="sumDigits()">Calculate</button>
+        <br/><br/> -->
+        <!-- <input type="text" readonly="true" placeholder="the result" id="result"/> -->
+    <script>
+
+  //     var num = prompt("enter number");
+        //     var x = prompt ("enter number");
+        //     console.log(Math.pow(num,x));
+
+
+        //    var x = prompt("enter number");
+        //    var y;
+        //    function power(x){
+        //    var z= x*x*x*x*x;
+        //    return z;}
+        //    y=power(x)
+        //    console.log(y);
+
+        // var username = "saiprakash";
+        // var password = "8099843874";
+        // var input1 = prompt ("enter username");
+        // var input2 = prompt ("enter password");
+        // if (username == input1 && password == input2){
+        //     console.log("your username and paaword correct")
+        // }
+        // else {
+        //     console.log ("your username and password wrong")
+        // }
+
+
+// var n=prompt("enter any number");
+     
+//      for(var i=2;i<n;i++)
+//      {    
+//          console.log(i,"value of i")
+//          for(var j=2;j<=i;j++){
+//              console.log(j,"value of j")
+//               if(i==j){
+//                   console.log(i);
+//               }else if(i%j==0){
+//                   break;
+//               }    
+                  
+//      }
+//  }
+
+
+// var n=prompt("enter any number");
+//        var j=0;
+//        for(var i=2;i<n;i++)
+//        {
+//            if(n%i==0)
+//            {
+//            j++;
+//            break;
+//            }
+
+//        }
+//        if(j==0)
+//        {
+//            console.log("its a prime");
+//        }
+//        else{
+//            console.log("its a not a prime");
+//        }
+
+// function sumDigits() {
+//     var value = document.getElementById("thenumber").value,
+//         sum = 0;
+
+//   while (value) {
+//       sum += value % 10;
+//       value = Math.floor(value / 10);
+//   }
+  
+//   var rezultat = document.getElementById("result");
+//   rezultat.value = sum;
+// }
+
+
+// function sumDigits(n) {
+//   return (n - 1) % 9 + 1;
+// }
+
+var sumOfDigits = prompt("enter any number");
+
+var sum=0;
+var num= sumOfDigits.split("");
+console.log(num[1])
+
+for (var i = 0; i < num.length; i++) {
+     sum =sum+Number(num[i]);
+    
+}console.log(sum)
+    </script>
+</body>
+</html>
