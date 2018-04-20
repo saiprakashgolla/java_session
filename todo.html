@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo-list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" id="user">
+    <button id="adduser">Add</button>
+    <div>
+        <p id="para">
+            Please enter text field
+        </p>
+    </div>
+
+    <h3>Upadate List:</h3>
+    <ol id="deletelist">
+
+    </ol>
+    <h3>Active List:</h3>
+    <ol id="donelist">
+
+    </ol>
+    <h3>Delete List:</h3>
+    <ol id="redolist">
+
+    </ol>
+
+
+<script>
+   
+var newuser;
+var todos = [];
+document.getElementById("para").style.display = "none";
+
+document.getElementById("adduser").onclick = function (){
+    newuser = document.getElementById('user').value;
+   if(newuser){
+       todos.push({data:newuser, done:false, ok:false})
+       document.getElementById("para").style.display = "none";
+   }
+   else{
+       document.getElementById("para").style.display = "block";
+   }
+   document.getElementById('user').value='';
+   console.log(todos)
+   showTodos();
+}
+
+function showTodos(){
+   document.getElementById('donelist').innerHTML = '';
+   document.getElementById('deletelist').innerHTML ='';
+   document.getElementById('redolist').innerHTML ='';
+
+
+/* for(var i=0; i<todos.length;i++){
+  var obj = todos[i];
+   if(obj.done==true){
+       document.getElementById('donelist').innerHTML += "<li>" +obj.data+ "</li>"
+   }else{
+       document.getElementById('deletelist').innerHTML += "<li>" +obj.data + "<button onclick='makeDone("+i+")'>Done</button>" +"</li>";
+   }
+} */
+    todos.forEach(function (obj,i){
+       
+       if(obj.done==true){
+        
+          document.getElementById('donelist').innerHTML += "<li>" + obj.data+" "+ "<button onclick ='makeredo("+i+")'>Redo</botton>"+"<br>" + "</li>";
+       }
+       else if(obj.ok==true){
+       
+        document.getElementById('redolist').innerHTML += "<li>" + obj.data +" "+ "<button onclick ='makeredo("+i+")'>Redo</botton>"+"<br>" +"</li>"; 
+       }
+       else{
+        
+        document.getElementById('deletelist').innerHTML += "<li>" + obj.data +" "+ "<button onclick='makeDone("+i+")'>Done</button>" +" "+ "<button onclick='makedelete("+i+")'>Delete</button>"+"<br>" + "<br>" +"</li>";
+       }
+
+   })
+ 
+ 
+}
+
+function makeDone(index){
+   todos[index].done = true;
+   showTodos() 
+}
+function makedelete(index){
+    todos[index].ok = true;
+//  todos.splice([index],1);
+   showTodos()
+   
+}
+function makeredo(index){
+    todos[index].ok = false;
+    todos[index].done= false;
+   showTodos()
+}
+// function makeundo(index){
+//     todos[index].ok = false;
+//     todos[index].done= false;
+//    showTodos()
+// }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+#user{
+    width: 90%;
+    padding: 10px;
+
+}
+#adduser{
+    padding: 9px 30px;
+    font-size: 16px;
+}
+#donelist{
+    text-decoration: line-through;
+}
